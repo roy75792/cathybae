@@ -1,0 +1,73 @@
+<style>
+    body {
+        background-color: rgba(255,0,0,0.815);
+    }
+    
+    p {
+        color: rgba(255, 0, 0, 0.813);
+        background-color: rgba(255, 255, 0, 0.815);
+        width: fit-content;
+        padding: 7px;
+        border-radius: 8px;
+        box-shadow: 3px 3px 3px rgba(217, 255, 0, 0.351);
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+    }
+    
+    div {
+        position: relative;
+        color: rgba(255, 0, 0, 0.813);
+        background-color: rgba(255, 255, 0, 0.815);
+        width: fit-content;
+        padding: 7px;
+        border-radius: 8px;
+        box-shadow: 3px 3px 3px rgba(217, 255, 0, 0.351);
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+    }
+
+    h1 {
+        color: rgba(255, 0, 0, 0.813);
+        background-color: rgba(255, 255, 0, 0.815);
+        width: fit-content;
+        padding: 7px;
+        border-radius: 8px;
+        box-shadow: 3px 3px 3px rgba(217, 255, 0, 0.351);
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+    }
+</style>
+<body>
+    <center>
+        <font size="7">
+            <p>
+                mah pans ran off again. catch em to earn a better discount!
+            </p>
+            <h1 id="score">
+                Discount-O-Meter:
+            </h1>
+        </font>
+    </center>
+    <div id="pan">
+        <button onclick="scoring()"><img src="piss.png" width="300" height="225"></button>
+    </div>
+</body>
+<script>
+    const maxHeight = window.innerHeight - 150;
+    const maxWidth = window.innerWidth - 150;
+
+    let score = 0;
+
+    setInterval(chase, 500);
+    
+    function scoring() {
+        const scorecount = document.getElementById("score");
+        score += 10;
+        scorecount.textContent = 'Discount-O-Meter:' + ' ' + `${score}` + ' ' + 'Mitchelin Stars'
+        }
+
+    function chase() {
+        const pan = document.getElementById("pan");
+        const randomTopPosition = Math.floor(Math.random() * maxHeight);
+        const randomLeftPosition = Math.floor(Math.random() * maxWidth);
+        pan.style.top = randomTopPosition + 'px';
+        pan.style.left = randomLeftPosition + 'px';
+    }
+</script>
